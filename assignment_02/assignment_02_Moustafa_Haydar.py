@@ -12,6 +12,9 @@
 #     if n == 0 or n == 1:
 #         print(1)
 #         return
+
+#     if n < 0:
+#       return
     
 #     factorial = 1
 #     numbers = []
@@ -27,11 +30,8 @@
 #             print(" * ", end="")
 #     print(")")
 
-
-# calculateFactorial(4)
-# calculateFactorial(6)
-# calculateFactorial(1)
-# calculateFactorial(0)
+# x = int(input("Enter a number to calculate factorial: "))
+# calculateFactorial(x)
 
 #------------------------------------------------------------------
 
@@ -41,32 +41,39 @@
 # every integer has at least one divisor: 1 and the number itself.
 # For the input 5, the correct output should be [1, 5], not [].
 
+
 # def find_divisors(n):
+#     if n == 0:
+#         print("Divisors of 0 are undefined.")
+#         return
     
-#     # check divisors
+#     # check divisors for the absolute value of n
 #     divisors = []
-#     for i in range(1, n+1):
-#         if n % i == 0:
+#     for i in range(1, abs(n)+1):
+#         if abs(n) % i == 0:
 #             divisors.append(i)
     
 #     # print divisors
-#     print("[", end="")
+#     print(f"Divisors of {n}: [", end="")
 #     for i in range(len(divisors)):
 #         print(divisors[i], end="")
-#         if i != len(divisors)-1: # print ", " if not last case
+#         if i != len(divisors)-1:  # print ", " if not last case
 #             print(", ", end="")
 #     print("]")
 
-
-
-# find_divisors(10)
-# find_divisors(16)
-# find_divisors(5)
-# find_divisors(0)
+# x = int(input("Enter a number to find divisors: "))
+# find_divisors(x)
 
 #-----------------------------------------------------------------
 
 # Exercise 3
+
+# Solution 1
+
+# def reverseString(s):
+#   return x[::-1]
+
+# Solution 2
 
 # def reverseString(s):
 #     str = []
@@ -76,8 +83,8 @@
 #         i -= 1
 #     return ''.join(str)
 
-# print(reverseString("Hello World"))
-# print(reverseString("oneword"))
+# str = input("Enter a string to reverse: ")
+# print(reverseString(str))
 
 #-------------------------------------------------------------------
 
@@ -90,9 +97,9 @@
 #             evens.append(i)
 #     return evens
 
-# print(checkEvens([1, 2, 3, 4, 5, 6]))
-# print(checkEvens([5, 3, 18, 4, 2, 7, 10]))
-# print(checkEvens([5, 3, 11, 5, 1]))
+# nums = input("Enter a list of numbers (,): ")
+# nums = [int(num) for num in nums.split(",")]
+# print(checkEvens(nums))
 
 #-------------------------------------------------------------------
 
@@ -111,11 +118,8 @@
 #     else:
 #         print("Weak password")
 
-
-# checkStrongPassword("Hello5?world")
-# checkStrongPassword("password")
-# checkStrongPassword("Password123")
-# checkStrongPassword("pAs1$!") # less than 8 char
+# password = input("Enter your password to check it: ")
+# checkStrongPassword(password)
 
 #-------------------------------------------------------------------
 
@@ -132,7 +136,7 @@
 #         if not n.isdigit():
 #             return False
 
-#         if n != '0' and n.startswith('0'):
+#         if n != '0' and n.startswith('0'): #0 #012
 #             return False
 
 #         if not (0 <= int(n) <= 255):
@@ -140,13 +144,8 @@
         
 #     return True
 
+# x = input("Enter an IPv4: ")
+# print(checkIPv4(x))
 
-# print(checkIPv4("256.168.1.1"))
-# print(checkIPv4("192.168.1"))
-# print(checkIPv4("10.0.0.01"))
-# print(checkIPv4("192.168.01.1"))
-# print(checkIPv4("192.168.1.1.1"))
-# print(checkIPv4("192.168..1"))
-# print(checkIPv4("192.168.1.-1"))
 
 #---------------------------------------------------------------------
